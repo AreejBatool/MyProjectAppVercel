@@ -29,6 +29,17 @@ app.get("/", (req, res) => {
   res.send("Node API is running successfully");
 });
 
+
+app.get("/users", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // POST /user route to test database connection
 app.post("/user", async (req, res) => {
   try {
