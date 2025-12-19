@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/api/users", async (req, res) => {
+app.get("/get-users", async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
