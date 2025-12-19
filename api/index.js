@@ -37,10 +37,9 @@ app.post("/user", async (req, res) => {
 });
 
 // -----------------------------
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// ❌ REMOVE app.listen()
+// ❌ Do NOT use server ports in Vercel
+// -----------------------------
 
+// Export the Express app for Vercel
 module.exports = app;
