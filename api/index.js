@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 });
 
 // POST /user route to test database connection
-app.post("/api/user", async (req, res) => {
+app.post("/user", async (req, res) => {
   try {
     const user = await User.create({ name: req.body.name });
     res.json(user);
